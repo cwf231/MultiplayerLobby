@@ -1,0 +1,188 @@
+[gd_scene load_steps=7 format=3 uid="uid://8ogqfcotb6jp"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_pu8xe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg3qa"]
+bg_color = Color(0.619608, 0.619608, 0.619608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wty1p"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkene"]
+bg_color = Color(0.298039, 0.686275, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dvqc"]
+bg_color = Color(0.298039, 1, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg588"]
+bg_color = Color(0.298039, 1, 1, 1)
+
+[node name="Lobby" type="Node2D"]
+script = ExtResource("1_pu8xe")
+
+[node name="MainMenu" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="MainMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+
+[node name="PlayerNameInput" type="LineEdit" parent="MainMenu/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "<<Enter Your Name>>"
+alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MainMenu/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HostGameBtn" type="Button" parent="MainMenu/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "[ Host Game ]"
+
+[node name="HSeparator2" type="HSeparator" parent="MainMenu/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="IPAddressInput" type="LineEdit" parent="MainMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "localhost"
+placeholder_text = "<<Enter IP Address>>"
+alignment = 1
+expand_to_text_length = true
+caret_blink = true
+
+[node name="JoinGameBtn" type="Button" parent="MainMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "[ Join Game ]"
+
+[node name="Lobby" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="LeftPanel" type="VBoxContainer" parent="Lobby"]
+custom_minimum_size = Vector2(760, 0)
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 194.0
+grow_vertical = 2
+
+[node name="HeaderRow" type="HBoxContainer" parent="Lobby/LeftPanel"]
+layout_mode = 2
+
+[node name="PlayerHeader" type="Label" parent="Lobby/LeftPanel/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.129412, 0.588235, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "PLAYER"
+horizontal_alignment = 1
+
+[node name="FactionHeader" type="Label" parent="Lobby/LeftPanel/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.129412, 0.588235, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "FACTION"
+horizontal_alignment = 1
+
+[node name="StatusHeader" type="Label" parent="Lobby/LeftPanel/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.129412, 0.588235, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "STATUS"
+horizontal_alignment = 1
+
+[node name="ColorHeader" type="Label" parent="Lobby/LeftPanel/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.129412, 0.588235, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "COLOR"
+horizontal_alignment = 1
+
+[node name="RightPanel" type="VBoxContainer" parent="Lobby"]
+custom_minimum_size = Vector2(400, 0)
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -41.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ExitButton" type="Button" parent="Lobby/RightPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_cg3qa")
+text = "EXIT
+"
+
+[node name="ChatDisplay" type="RichTextLabel" parent="Lobby/RightPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_wty1p")
+bbcode_enabled = true
+scroll_following = true
+
+[node name="ChatEntryContainer" type="HBoxContainer" parent="Lobby/RightPanel"]
+layout_mode = 2
+
+[node name="ChatInput" type="LineEdit" parent="Lobby/RightPanel/ChatEntryContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
+[node name="ChatSendButton" type="Button" parent="Lobby/RightPanel/ChatEntryContainer"]
+layout_mode = 2
+text = "SEND"
+
+[node name="ReadyButton" type="Button" parent="Lobby/RightPanel"]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_vkene")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4dvqc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cg588")
+text = "READY"
+
+[connection signal="pressed" from="MainMenu/PanelContainer/MarginContainer/VBoxContainer/HostGameBtn" to="." method="_on_host_game_btn_pressed"]
+[connection signal="pressed" from="MainMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/JoinGameBtn" to="." method="_on_join_game_btn_pressed"]
+[connection signal="pressed" from="Lobby/RightPanel/ChatEntryContainer/ChatSendButton" to="." method="_on_chat_send_button_pressed"]
